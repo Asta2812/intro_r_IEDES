@@ -189,7 +189,7 @@ write.csv2(full_bdd, 'full_bdd_speech_2024.csv')
 
 
 
-
+library(rvest)
 
 url <- "https://en.wikipedia.org/wiki/List_of_countries_by_ecological_footprint"
 code_html <- read_html(url, encoding="UTF-8")
@@ -204,8 +204,6 @@ library(sf)
 world_map <- st_read('world-administrative-boundaries/world-administrative-boundaries.shp')
 plot(st_geometry(world_map))
 
-table_empr1 <- table_empr %>% 
-  mutate(Country.region = case_when(Country.region == "United States" ~ "United States of America"))
 
 table_empr$Country.region[table_empr$Country.region == "United States"] <- "United States of America"
 table_empr$Country.region[table_empr$Country.region == "United Kingdom"] <- "U.K. of Great Britain and Northern Ireland"

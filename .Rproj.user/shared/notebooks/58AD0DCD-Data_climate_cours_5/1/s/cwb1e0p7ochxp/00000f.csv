@@ -1,5 +1,0 @@
-"0","new_stop_words_fr <- data.frame(""word"" = c(""mme"", ""janvier"", ""février"",""mars"",""avril"",""mai"",""juin"",""juillet"", ""août"", ""septembre"",""octobre"",""novembre"",""décembre""), stringsAsFactors = FALSE)"
-"0","tidy_text <- tidy_text %>% dplyr::anti_join(new_stop_words_fr)"
-"1","[38;5;232mJoining with `by = join_by(word)`[39m
-"
-"0","head(tidy_text %>% dplyr::count(word, sort = FALSE))"

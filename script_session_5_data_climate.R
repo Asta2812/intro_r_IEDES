@@ -49,7 +49,7 @@ df_stopwords_fr <- data.frame(word=stopwords_fr,
 tidy_text <- tidy_text %>% dplyr::anti_join(df_stopwords_fr) 
 head(tidy_text, n=4)
 head(tidy_text %>% dplyr::count(word, sort = TRUE))
-new_stop_words_fr <- data.frame("word" = c("mme", "janvier", "février","mars","avril","mai","juin","juillet", "août", "septembre","octobre","novembre","décembre"), stringsAsFactors = FALSE)
+new_stop_words_fr <- data.frame("word" = c("mme", "janvier", "février","mars","avril","mai","juin","juillet", "août", "septembre","octobre","novembre","décembre", "pdf"), stringsAsFactors = FALSE)
 tidy_text <- tidy_text %>% dplyr::anti_join(new_stop_words_fr)
 head(tidy_text %>% dplyr::count(word, sort = FALSE))
 head(tidy_text %>% dplyr::count(word, sort = TRUE))
@@ -63,6 +63,13 @@ library(wordcloud)
 tidy_text %>% 
   dplyr::count(word) %>% 
   with(wordcloud(word, n, min.freq = 1000, colors = brewer.pal(8, "Dark2")))
+
+pdf('wordcloud_example.pdf')
+tidy_text %>% 
+  dplyr::count(word) %>% 
+  with(wordcloud(word, n, min.freq = 1000, colors = brewer.pal(8, "Dark2")))
+dev.off()
+
 
 new_stop_words_fr2 <- data.frame("word" = c("affaires","ministre", "ministres","communiqué","déclaration","conseil","secrétaire","interview","jean"), stringsAsFactors = FALSE)
 
@@ -89,7 +96,18 @@ tidy_text_tfidf$month_date <- as.Date(tidy_text_tfidf$month, format=c('%d/%m/%Y'
 
 library(ggplot2)
 tidy_text_tfidf %>% 
-  dplyr::filter(month_date >= as.Date("2021-01-01")) %>% 
+  dplyr::filter(month_date >= as.Date("2022-01-01")) %>% 
+  dplyr::group_by(month_date) %>% 
+  top_n(10, n) %>% 
+  ungroup() %>% 
+  dplyr::mutate(word = reorder(word, n)) %>% 
+  ggplot(aes(word, n, fill = month_date)) + 
+  geom_col(show.legend = FALSE) + 
+  facet_wrap(~month_date, scales = "free") + 
+  coord_flip() 
+
+tidy_text_tfidf %>% 
+  dplyr::filter(month_date >= as.Date("2022-01-01")) %>% 
   dplyr::group_by(month_date) %>% 
   top_n(10, tf_idf) %>% 
   ungroup() %>% 

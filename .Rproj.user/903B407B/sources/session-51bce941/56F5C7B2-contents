@@ -1,0 +1,315 @@
+---
+title: "Introduction to R"
+subtitle: "First course - Answers"
+author: "Jean-Baptiste Guiffard and Florence Lecuit"
+date: "October 11, 2024"
+output: 
+  pdf_document:
+    toc: false
+    toc_depth: 3
+    keep_tex: true
+    fig_caption: true
+    latex_engine: xelatex
+header-includes:
+  - \usepackage{setspace}
+  - \doublespacing
+  - \usepackage{float}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage{subcaption}
+  - \usepackage{booktabs}
+  - \usepackage{longtable}
+  - \usepackage{tabularx}
+  - \usepackage{pdflscape}
+  - \usepackage{rotating}
+  - \usepackage{multirow}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{wrapfig}
+  - \usepackage{lipsum}
+  - \usepackage{titlesec}
+  - \usepackage{titling}
+  - \usepackage{fancyhdr}
+  - \usepackage{lastpage}
+  - \usepackage{hyperref}
+  - \usepackage{cleveref}
+  - \usepackage{amsmath}
+  - \usepackage{amssymb}
+  - \usepackage{amsfonts}
+  - \usepackage{amsthm}
+  - \usepackage{mathrsfs}
+  - \usepackage{mathtools}
+  - \usepackage{bm}
+  - \usepackage{bbm}
+  - \usepackage{dsfont}
+  - \usepackage{siunitx}
+  - \usepackage{graphicx}
+  - \usepackage{geometry}
+  - \geometry{top=3.5cm,bottom=3.5cm,left=3cm,right=2cm}
+  - \usepackage{csquotes}
+  - \usepackage[table,xcdraw]{xcolor}
+  - \usepackage{float}
+  - \usepackage{lmodern}
+  - \usepackage{ebgaramond}
+  - \setstretch{1}
+  - \setlength{\droptitle}{-2cm}
+fontsize: 12pt
+geometry: "top=3.5cm, bottom=3.5cm, left=3cm, right=2cm"
+classoption: a4paper
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE) #for debug tinytex
+```
+
+
+## Load dataset
+
+```{r}
+
+data_pollution <- read.csv2('DATA/owid-co2-data.csv', sep=",")
+
+```
+
+
+
+## Exercise 1: Manipulating vectors
+
+```{r}
+
+a=c("apple", "orange", "banana", "strawberry", "lemon")
+b=c(1,2,3,4,5)
+c=c(6,7,8)
+
+```
+
+1. What is the length of vector a? 
+
+```{r, echo=TRUE}
+
+length(a)
+
+```
+
+2. Try doing a[1:3], what is the result?
+
+```{r, echo=T}
+a[1:3]
+```
+
+3. Create new vector *agrumes* with only values *orange* and *lemon*
+
+```{r, echo=T}
+agrumes <- a[c(2,5)]
+agrumes
+```
+
+4. Try doing a[-1], what is the result?
+```{r, echo=T}
+a[-1]
+```
+
+5. Sort vector a alphabetically.
+
+```{r, echo=T}
+sort(a)
+```
+
+6. Combine vectors b and c into a data-frame. What is the problem?
+
+```{r, echo=T}
+
+#df_combined1 <- data.frame(b,c)
+#print(df_combined1)
+```
+
+7. Combine vectors a and b into a data-frame. Why does this work?
+
+```{r, echo=T}
+
+df_combined2 <- data.frame(a,b)
+print(df_combined2)
+
+```
+
+## Exercise 2: Describing a data-frame
+
+1. What type of object is *data_pollution* ?
+
+```{r, echo=T}
+
+class(data_pollution)
+```
+
+
+2. How many observations and variables does this dataset contain?
+
+```{r, echo=T}
+ncol(data_pollution) #number of variables
+nrow(data_pollution) #number of observations
+```
+
+3. How many missing values are there in this dataset?
+```{r, echo=T}
+
+#Whole dataset
+sum(is.na(data_pollution))
+
+#Specific column
+sum(is.na(data_pollution$population))
+sum(is.na(data_pollution$gdp))
+
+
+```
+
+4. What type of variables are in this dataset?
+```{r, echo=T, eval=F}
+
+str(data_pollution) #whole description of data-frame
+
+```
+
+```{r, echo=T}
+class(data_pollution$population) #type of specific variable
+
+```
+
+
+## Exercise 3: Subsetting, Selecting Columns, and Dropping Duplicates
+
+1. Create a new data frame that contains only the variables: `country`, `iso_code`, `year`, `population`, `gdp`, and `co2`.  
+
+```{r, echo=TRUE, message=F, warning=F}
+library(tidyverse)
+data_pollution <- read.csv2('DATA/owid-co2-data.csv', sep=",")
+df1 <- data_pollution %>% select(country, iso_code, year, population, gdp, co2)
+```
+
+
+2. Filter the dataset to include only data for the country "France".  
+
+```{r}
+df1_france <- df1 %>% filter(country == "France")
+```
+
+
+3. Subset the data to include only countries with a population greater than 50 million. Which variable should you use to do this?
+
+```{r}
+df1_pop50 <- df1 %>% filter(population > 50000000)
+```
+
+4. Check if there are any duplicate rows in the dataset and drop them if they exist.  
+
+```{r}
+df1 <- df1 %>% distinct()
+```
+
+
+## Exercise 4: Creating Variables
+
+1. Create a new variable in the dataset called `gdp_per_capita`, which calculates GDP per capita (GDP divided by population).  
+
+```{r}
+df1 <- df1 %>% mutate(gdp_per_capita = as.numeric(as.character(gdp)) / as.numeric(as.character(population)))
+```
+
+
+2. Similarly, create a new variable called `co2_per_capita`, which calculates CO2 emissions per capita.  
+
+```{r}
+df1 <- df1 %>% mutate(co2_per_capita = as.numeric(as.character(co2)) / as.numeric(as.character(population)))
+```
+
+
+3. Are there any missing values in the new variables you created? If so, filter out the rows where these values are missing.  
+
+
+```{r}
+df1 <- df1 %>% filter(!is.na(gdp_per_capita) & !is.na(co2_per_capita))
+df1 <- df1 %>% distinct(gdp_per_capita, .keep_all = TRUE)
+
+```
+
+
+4. Create a new variable that groups countries into quartiles based on GDP per capita.  
+
+```{r}
+df1 <- df1 %>% mutate(quartiles = ntile(gdp_per_capita, 4))
+```
+
+
+
+## Exercise 5: Basic Statistics
+
+1. For the new dataset, calculate the mean, minimum, and maximum for the `gdp_per_capita` and `co2_per_capita` columns.  
+
+```{r}
+df1 %>% summarise(mean_gdp_per_capita = mean(gdp_per_capita, na.rm = TRUE), 
+                  min_gdp_per_capita = min(gdp_per_capita, na.rm = TRUE), 
+                  max_gdp_per_capita = max(gdp_per_capita, na.rm = TRUE),
+                  mean_co2_per_capita = mean(co2_per_capita, na.rm = TRUE), 
+                  min_co2_per_capita = min(co2_per_capita, na.rm = TRUE), 
+                  max_co2_per_capita = max(co2_per_capita, na.rm = TRUE))
+```
+
+
+2. Group the data by `country` and calculate the average `co2_per_capita` for each country.  
+
+```{r}
+df1 %>% group_by(country) %>% summarise(mean_co2_per_capita = mean(co2_per_capita, na.rm = TRUE))
+```
+
+
+3. Group the data by `quartiles` and calculate the average `co2_per_capita` for each quartile.
+
+```{r}
+df1 %>% group_by(quartiles) %>% summarise(mean_co2_per_capita = mean(co2_per_capita, na.rm = TRUE))
+```
+
+
+## Exercise 6: Merging Datasets
+
+1. Load a new dataset that contains additional information on countries. 
+
+```{r}
+df2 <- read.csv2('DATA/Metadata_Country.csv', sep=",")
+```
+
+2. Which variable(s) would you use as the key(s) to merge the two datasets (`df1` and `df2`)? Explain why.  
+
+`Country.Code` for df2 and `iso_code` for df1. They are the common variables between the two datasets. 
+
+3. Perform an inner join between `df1` and `df2` based on the common key(s). 
+  
+```{r}
+df_merged <- inner_join(df1, df2, by = c("iso_code" = "Country.Code"))
+```
+
+
+4. After merging the datasets, check how many new columns were added. How many columns and rows does the new data frame now contain?  
+
+```{r}
+ncol(df_merged)
+```
+
+
+5. Check for any missing values in the merged dataset after the join. Which countries or years might be missing from one of the datasets?  
+
+```{r}
+df_merged %>% filter(is.na(co2_per_capita))
+```
+
+
+7. Group the data by `continents` and calculate the average `co2_per_capita` for each continent.
+
+```{r}
+df_merged %>% group_by(Region) %>% summarise(mean_co2_per_capita = mean(co2_per_capita, na.rm = TRUE))
+```
+
+
