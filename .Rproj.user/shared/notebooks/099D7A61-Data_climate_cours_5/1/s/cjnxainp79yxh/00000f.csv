@@ -1,0 +1,9 @@
+"0","#install.packages(""lsa"") # packages pour le chargement de stopwords (pour différentes langues)"
+"0","library(lsa)"
+"0","data(stopwords_fr)"
+"0","df_stopwords_fr <- data.frame(word=stopwords_fr,"
+"0","                              lexicon = ""?"")"
+"0","tidy_text <- tidy_text %>% dplyr::anti_join(df_stopwords_fr) "
+"1","[38;5;232mJoining with `by = join_by(word)`[39m
+"
+"0","head(tidy_text, n=4)"

@@ -1,0 +1,8 @@
+"0","#install.packages(""tidyft"") #Pour le recodage des variables textuelles "
+"0","library(tidyft)"
+"0","bdd_speech <- read.csv2('full_bdd_speech_2024.csv') %>%"
+"0","  as.data.table() %>%"
+"0","  utf8_encoding(titles) %>%"
+"0","  utf8_encoding(dates) %>%"
+"0","  as.data.frame()"
+"0","#head(bdd_speech$titles, n=6)"

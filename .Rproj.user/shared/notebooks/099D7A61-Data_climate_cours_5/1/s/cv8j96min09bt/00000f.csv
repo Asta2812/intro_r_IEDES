@@ -1,0 +1,7 @@
+"0","#install.packages(""wordcloud"")"
+"0","library(wordcloud)"
+"2","Le chargement a nécessité le package : RColorBrewer
+"
+"0","tidy_text %>% "
+"0","  dplyr::count(word) %>% "
+"0","  with(wordcloud(word, n, min.freq = 1000, colors = brewer.pal(8, ""Dark2"")))"

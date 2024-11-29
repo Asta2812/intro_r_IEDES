@@ -1,0 +1,3 @@
+"0","tidy_text_tfidf$dates <- as.Date(tidy_text_tfidf$dates, format = c(""%d %b %Y""))"
+"0","tidy_text_tfidf$month <- paste(""01/"",format(tidy_text_tfidf$dates, ""%m""),""/"",format(tidy_text_tfidf$dates, ""%Y""), sep="""")"
+"0","tidy_text_tfidf$month_date <- as.Date(tidy_text_tfidf$month, format=c('%d/%m/%Y'))"

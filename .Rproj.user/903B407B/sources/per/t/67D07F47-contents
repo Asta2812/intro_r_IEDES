@@ -1,0 +1,170 @@
+################################################################################
+##############                 DATA AND CLIMATE                   ##############                  
+##############                   5th Session                      ##############                  
+##############               Jean-Baptiste Guiffard               ##############
+################################################################################
+
+# Données et Climat Session 5
+
+#setwd('C:/Users/jbgui/OneDrive - Université Paris 1 Panthéon-Sorbonne/COURS_DISPENSES/IEDES_2022_2023/Data_Climat')
+
+library(flextable)
+library(dplyr)
+library(magrittr)
+
+"L'influence humaine a réchauffé l'atmosphère, l'océan et les terres."
+ma_phrase <- "L'influence humaine a réchauffé l'atmosphère, l'océan et les terres."
+is.character(ma_phrase)
+nchar(ma_phrase) #nombre de caractères dans le string
+#install.packages("stringr")
+library(stringr)
+str_detect(ma_phrase,"influence")
+str_detect(ma_phrase,'calamar')
+ma_phrase <- str_replace(ma_phrase,'humaine', "de l'homme")
+ma_phrase <- gsub("'|,", " ", ma_phrase)
+print(ma_phrase)
+# install.packages('tidytext')
+library(tidytext)
+#install.packages("tidyft") #Pour le recodage des variables textuelles 
+library(tidyft)
+bdd_speech <- read.csv2('full_bdd_speech_2024.csv') %>%
+  as.data.table() %>%
+  utf8_encoding(titles) %>%
+  utf8_encoding(dates) %>%
+  as.data.frame()
+#head(bdd_speech$titles, n=6)
+bdd_speech$speech <- gsub("[[:punct:]]", " ", bdd_speech$speech)
+bdd_speech$speech <- gsub('[[:digit:]]+', '', bdd_speech$speech)
+bdd_speech$speech <- gsub("[\r\n]", "", bdd_speech$speech)
+#head(bdd_speech$speech, n=4)
+tidy_text <- tibble(bdd_speech) %>%
+  unnest_tokens("word", speech)
+
+head(tidy_text, n=4)
+#install.packages("lsa") # packages pour le chargement de stopwords (pour différentes langues)
+library(lsa)
+data(stopwords_fr)
+df_stopwords_fr <- data.frame(word=stopwords_fr,
+                              lexicon = "?")
+tidy_text <- tidy_text %>% dplyr::anti_join(df_stopwords_fr) 
+head(tidy_text, n=4)
+head(tidy_text %>% dplyr::count(word, sort = TRUE))
+new_stop_words_fr <- data.frame("word" = c("mme", "janvier", "février","mars","avril","mai","juin","juillet", "août", "septembre","octobre","novembre","décembre"), stringsAsFactors = FALSE)
+tidy_text <- tidy_text %>% dplyr::anti_join(new_stop_words_fr)
+head(tidy_text %>% dplyr::count(word, sort = FALSE))
+head(tidy_text %>% dplyr::count(word, sort = TRUE))
+tidy_text_stems <- tidy_text %>%
+  mutate_at("word", funs(wordStem((.), language="fr"))) 
+
+#head(tidy_text_stems)
+#install.packages("wordcloud")
+library(wordcloud)
+
+tidy_text %>% 
+  dplyr::count(word) %>% 
+  with(wordcloud(word, n, min.freq = 1000, colors = brewer.pal(8, "Dark2")))
+
+new_stop_words_fr2 <- data.frame("word" = c("affaires","ministre", "ministres","communiqué","déclaration","conseil","secrétaire","interview","jean"), stringsAsFactors = FALSE)
+
+tidy_text <- tidy_text %>% dplyr::anti_join(new_stop_words_fr2)
+
+tidy_text_stems <- tidy_text %>%
+  mutate_at("word", funs(wordStem((.), language="fr"))) 
+
+tidy_text_stems %>% 
+  dplyr::count(word) %>% 
+  with(wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, "Dark2")))
+
+
+tidy_text_tfidf <- tidy_text %>%
+  dplyr::count(word, dates) %>%
+  bind_tf_idf(word, dates, n) %>%
+  dplyr::arrange(desc(tf_idf))
+
+head(tidy_text_tfidf)
+
+tidy_text_tfidf$dates <- as.Date(tidy_text_tfidf$dates, format = c("%d/%m/%Y"))
+tidy_text_tfidf$month <- paste("01/",format(tidy_text_tfidf$dates, "%m"),"/",format(tidy_text_tfidf$dates, "%Y"), sep="")
+tidy_text_tfidf$month_date <- as.Date(tidy_text_tfidf$month, format=c('%d/%m/%Y'))
+
+library(ggplot2)
+tidy_text_tfidf %>% 
+  dplyr::filter(month_date >= as.Date("2021-01-01")) %>% 
+  dplyr::group_by(month_date) %>% 
+  top_n(10, tf_idf) %>% 
+  ungroup() %>% 
+  dplyr::mutate(word = reorder(word, tf_idf)) %>% 
+  ggplot(aes(word, tf_idf, fill = month_date)) + 
+  geom_col(show.legend = FALSE) + 
+  facet_wrap(~month_date, scales = "free") + 
+  coord_flip() 
+
+df_envi <- tidy_text_tfidf %>%
+  dplyr::filter(word=="environnement") %>%
+  dplyr::group_by(month_date) %>%
+  dplyr::summarise(sum_n = sum(n))
+
+ggplot(data=df_envi, aes(x=month_date, y=sum_n)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
+
+df_ecologie <- tidy_text_tfidf %>%
+  dplyr::filter(word=="écologie") %>%
+  dplyr::group_by(month_date) %>%
+  dplyr::summarise(sum_n = sum(n))
+
+ggplot(data=df_ecologie, aes(x=month_date, y=sum_n)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
+
+df_transi <- tidy_text_tfidf %>%
+  dplyr::filter(word=="transition") %>%
+  dplyr::group_by(month_date) %>%
+  dplyr::summarise(sum_n = sum(n))
+
+ggplot(data=df_transi, aes(x=month_date, y=sum_n)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
+
+df_biodi <- tidy_text_tfidf %>%
+  dplyr::filter(word=="biodiversité") %>%
+  dplyr::group_by(month_date) %>%
+  dplyr::summarise(sum_n = sum(n))
+
+ggplot(data=df_biodi, aes(x=month_date, y=sum_n)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
+
+library(reshape2)
+
+prenoms_fr <-read.csv2('Prenoms.csv')
+
+bdd_speech_pair <- bdd_speech %>%
+  unnest_tokens(output = word, input = speech, token = "ngrams", n = 2)
+
+bdd_speech_pair <- cbind(bdd_speech_pair, colsplit(bdd_speech_pair$word, pattern=" ",names=c("word1", "word2"))) %>%
+  dplyr::filter(!word1 %in% stopwords_fr,
+                !word2 %in% stopwords_fr,
+                !word1 %in% prenoms_fr$X01_prenom,
+                !word2 %in% prenoms_fr$X01_prenom,
+                !word1 %in% new_stop_words_fr$word,
+                !word2 %in% new_stop_words_fr$word,
+                !word1 %in% new_stop_words_fr2$word,
+                !word2 %in% new_stop_words_fr2$word) %>%
+  tidyr::drop_na(word1, word2) %>%
+  dplyr::count(word1, word2, sort = TRUE)
+
+# filter for only relatively common combinations
+bigram_graph <- bdd_speech_pair %>%
+  dplyr::filter(n > 50) %>%
+  igraph::graph_from_data_frame()
+
+# Network graph
+set.seed(1776) 
+library(ggraph)
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n, edge_width = n), show.legend = FALSE, alpha = .5) +
+  geom_node_point(color = "#0052A5", size = 3, alpha = .5) +
+  geom_node_text(aes(label = name), vjust = 1.5) +
+  ggtitle("Réseau des mots - (2007-2023)") +
+  theme_void() 

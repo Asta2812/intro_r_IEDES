@@ -1,0 +1,6 @@
+"0","ma_phrase <- gsub(""'|,"", "" "", ma_phrase)"
+"0","print(ma_phrase)"
+"1","[1]"
+"1"," ""L influence de l homme a réchauffé l atmosphère  l océan et les terres."""
+"1","
+"

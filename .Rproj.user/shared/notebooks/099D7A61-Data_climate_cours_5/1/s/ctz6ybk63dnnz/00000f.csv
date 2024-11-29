@@ -1,0 +1,18 @@
+"0","new_stop_words_fr2 <- data.frame(""word"" = c(""affaires"",""ministre"", ""ministres"",""communiqué"",""déclaration"",""conseil"",""secrétaire"",""interview"",""jean""), stringsAsFactors = FALSE)"
+"0",""
+"0","tidy_text <- tidy_text %>% dplyr::anti_join(new_stop_words_fr2)"
+"1","[38;5;232mJoining with `by = join_by(word)`[39m
+"
+"0","tidy_text_stems <- tidy_text %>%"
+"0","  mutate_at(""word"", funs(wordStem((.), language=""fr""))) "
+"2","Avis :"
+"2"," [38;5;232m`funs()` was deprecated in dplyr 0.8.0.
+[36mℹ[38;5;232m Please use a list of either functions or lambdas:
+
+# Simple named list: list(mean = mean, median = median)
+
+# Auto named with `tibble::lst()`: tibble::lst(mean, median)
+
+# Using lambdas list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
+[90mCall `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.[38;5;232m[39m
+"

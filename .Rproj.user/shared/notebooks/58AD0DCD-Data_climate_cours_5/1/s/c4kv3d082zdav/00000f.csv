@@ -1,0 +1,4 @@
+"0","tidy_text <- tibble(bdd_speech) %>%"
+"0","  unnest_tokens(""word"", titles)"
+"0",""
+"0","head(tidy_text, n=4)"

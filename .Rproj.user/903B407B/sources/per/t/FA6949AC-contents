@@ -1,0 +1,478 @@
+---
+title: 'Data and Climate'
+subtitle: 'Session 5 - Extracting and analyzing textual data using R'
+author: "Jean-Baptiste Guiffard"
+date: '2024-01-11'
+output: 
+  beamer_presentation:
+    theme: "Berlin"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+    keep_tex:  true
+fontsize: 9pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(flextable)
+library(dplyr)
+library(magrittr)
+
+
+```
+
+
+
+# Course structure
+
+
+
+## Sessions
+
+| Sessions   | Topics |
+|---|-----------|
+| Session 1  | The Basics of R / Manipulating dataset with the DPLYR package |
+| Session 2  | Graphic representations with GGPLOT |
+| Session 3  | Making maps with R |
+| Session 4  | Web scraping with R|
+| Session 5  | Extracting and analyzing textual data using R |
+| Session 6  | Produce documents with Rmarkdown... |
+
+
+
+# La manipulation des données textuelles sur R
+
+## La production et l'analyse de données qualitatives
+
+- De plus en plus important de maîtriser des méthodes d'analyse de données qualitatives (et particulièrement textuelles).
+
+-  Les packages et fonctions Rfacilitent le processus d'identification, de manipulation et d'analyse des textes.
+
+
+## Que pouvons-nous faire ?
+
+- Analyse de la fréquence des mots
+
+- Comparaison des textes
+
+- Sentiment Analysis
+
+- Des nuages de mots
+
+- Des réseaux de co-occurence
+
+- Analyse des thématiques et leur évolution en fonction du temps
+
+## Quelques références
+
+
+- https://m-clark.github.io/text-analysis-with-R/string-theory.html#basic-text-functionality
+
+- https://www.red-gate.com/simple-talk/databases/sql-server/bi-sql-server/text-mining-and-sentiment-analysis-with-r/
+
+- https://www.tidytextmining.com/topicmodeling.html
+
+## Le traitement des chaînes de caractères sur R
+
+Partons d'un exemple simple...
+
+```{r, echo=T}
+"L'influence humaine a réchauffé l'atmosphère, l'océan et les terres."
+```
+
+Nous pouvons en faire un objet sur R...
+
+```{r, echo=T}
+ma_phrase <- "L'influence humaine a réchauffé l'atmosphère, l'océan et les terres."
+```
+
+Nous pouvons avoir un vecteur de *characters* (des chaînes de caracters séparées par des virgules) qui peut aussi être utilisé dans le cadre d'une variable dans une *data.frame*.
+
+## Quelques fonctions basiques de manipulation des données "characters" sur R
+
+Vérifier que le scalaire, le vecteur ou la variable étudié est constitué d'une ou de chaînes de caractères.
+```{r, echo=T}
+is.character(ma_phrase)
+nchar(ma_phrase) #nombre de caractères dans le string
+```
+
+Le package **stringr** (qui se charge aussi avec le package **tidyverse**) fournit un ensemble cohérent de fonctions conçues pour rendre le travail avec les chaînes de caractères aussi facile que possible.
+
+
+## Quelques fonctions basiques (II)
+
+Détecter un champ dans une chaîne de caractères...
+```{r, echo=T}
+#install.packages("stringr")
+library(stringr)
+str_detect(ma_phrase,"influence")
+str_detect(ma_phrase,'calamar')
+```
+
+Remplacer une partie d'une chaîne de caractères...
+```{r, echo=T}
+ma_phrase <- str_replace(ma_phrase,'humaine', "de l'homme")
+```
+
+## Quelques fonctions basiques (III)
+
+Remplacer plusieurs éléments d'un seul coup (gsub en séparant les éléments avec |)... Nous allons l'utiliser régulièrement pour le nettoyage des variables "textuelles".
+```{r, echo=T}
+ma_phrase <- gsub("'|,", " ", ma_phrase)
+print(ma_phrase)
+```
+
+
+# Nos premières analyses de corpus
+
+## Le package tidytext
+
+```{r, echo=T, message=F, warning=F}
+# install.packages('tidytext')
+library(tidytext)
+```
+
+- Un package efficace d'analyse textuelle (qui associe des fonctionnalités déjà présentes dans plusieurs autres packages :  dplyr, broom, tidyr and ggplot2).
+
+- Le format tidy text est un tableau avec un token par ligne.
+
+- Un token est un mot, ou un phrase ou un n-gram.
+
+## Le vocabulaire
+
+- Un **string** (ou un texte ou un document) : peut être stocké sous forme de chaîne de caractères, ou bien sous forme d'un vecteur de chaînes de caractères.
+
+- Un **corpus** (ou une collection) : C'est un objet qui contient des strings (ou textes) avec des détails et métadonnées supplémentaires.
+
+- La **matrice Document-term** : C'est une matrice décrivant un corpus de documents avec une ligne pour chaque document et une colonne pour chaque terme. Les valeurs à l'intérieur de la matrice sont soit un comptage de mots ou bien tf-idf. 
+
+## Créer le corpus
+
+```{r, echo=T, message=F, warning=F}
+#install.packages("tidyft") #Pour le recodage des variables textuelles 
+library(tidyft)
+bdd_speech <- read.csv2('DATA/bdd_discours_2007_2022.csv') %>%
+  as.data.table() %>%
+  utf8_encoding(titles) %>%
+  utf8_encoding(dates) %>%
+  as.data.frame()
+head(bdd_speech$titles, n=6)
+```
+
+
+
+## Nettoyage des données
+
+Nous pouvons utiliser la fonction gsub pour nettoyer des variables "textuelles":
+```{r, echo=T}
+bdd_speech$titles <- gsub("[[:punct:]]", " ", bdd_speech$titles)
+bdd_speech$titles <- gsub('[[:digit:]]+', '', bdd_speech$titles)
+bdd_speech$titles <- gsub("[\r\n]", "", bdd_speech$titles)
+head(bdd_speech$titles, n=4)
+```
+
+
+## Tokenisation
+
+La fonction unnest() extrait les tokens, ou mots particuliers d'un ensemble de données, de la colonne "texte" et les distribue dans des lignes individuelles avec les métadonnées correspondantes.
+
+```{r, echo=T}
+tidy_text <- tibble(bdd_speech) %>%
+  unnest_tokens("word", titles)
+
+head(tidy_text, n=4)
+```
+
+
+
+## Retirer les stopwords
+
+Les **stopwords** $\rightarrow$ sont un ensemble de mots couramment utilisés dans une langue. Lorsqu'on traite le langage naturel, nous voulons filtrer ces mots de nos données.
+
+- Chargement des stopwords français 
+
+- On peut utiliser anti_join() pour trouver les stop words qui apparaissent parmi nos tokens et les supprimer.
+
+```{r, echo=T, warning=F, message=F}
+#install.packages("lsa") # packages pour le chargement de stopwords (pour différentes langues)
+library(lsa)
+data(stopwords_fr)
+df_stopwords_fr <- data.frame(word=stopwords_fr,
+                              lexicon = "?")
+tidy_text <- tidy_text %>% dplyr::anti_join(df_stopwords_fr) 
+head(tidy_text, n=4)
+```
+
+
+## Préparer l'analyse de l'occurence des mots
+
+Avec cette nouvelle base de données, nous pouvons construire une matrice qui contient d'une part, les mots qui apparaissent dans le corpus et d'autre part, leur fréquence d'apparition.
+
+```{r, echo=T}
+head(tidy_text %>% dplyr::count(word, sort = TRUE))
+```
+
+## Compléter la liste des stopwords (I)
+
+Des mots spécifiques à notre corpus peuvent revenir de manière répétées sans être forcément très informatif.
+
+```{r, echo=T}
+new_stop_words_fr <- data.frame("word" = c("mme", "janvier", "février","mars","avril","mai","juin","juillet", "août", "septembre","octobre","novembre","décembre"), stringsAsFactors = FALSE)
+tidy_text <- tidy_text %>% dplyr::anti_join(new_stop_words_fr)
+head(tidy_text %>% dplyr::count(word, sort = FALSE))
+```
+
+
+## Compléter la liste des stopwords (II)
+
+```{r, echo=T}
+head(tidy_text %>% dplyr::count(word, sort = TRUE))
+```
+
+
+## Retrouver la racine de chaque mot
+
+Les tokens doivent être "stemmed" $\rightarrow$ réduction des mots à leur racine, leur base ou leur forme.
+
+
+```{r, echo=T, warning=F, message=F}
+tidy_text_stems <- tidy_text %>%
+  mutate_at("word", funs(wordStem((.), language="fr"))) 
+
+head(tidy_text_stems)
+```
+
+
+## Notre premier nuage de mots
+
+```{r, echo=T, message=F, warning=F}
+#install.packages("wordcloud")
+library(wordcloud)
+
+tidy_text %>% 
+  dplyr::count(word) %>% 
+  with(wordcloud(word, n, min.freq = 1000, colors = brewer.pal(8, "Dark2")))
+```
+
+
+## Améliorer les enseignements d'un nuage de mots
+
+```{r, echo=T}
+new_stop_words_fr2 <- data.frame("word" = c("affaires","ministre", "ministres","communiqué","déclaration","conseil","secrétaire","interview","jean"), stringsAsFactors = FALSE)
+
+tidy_text <- tidy_text %>% dplyr::anti_join(new_stop_words_fr2)
+
+tidy_text_stems <- tidy_text %>%
+  mutate_at("word", funs(wordStem((.), language="fr"))) 
+```
+
+##
+
+```{r, echo=F}
+tidy_text_stems %>% 
+  dplyr::count(word) %>% 
+  with(wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, "Dark2")))
+```
+
+
+## Ajouter une dimension temporelle dans l'analyse
+
+TF-IDF (*term frequency-inverse document frequency*)
+
+- Mesure statistique $\rightarrow$ Importance d'un terme contenu dans un texte vis-à-vis d'un corpus de texte. Le poids du mot varie en fonction du nombre d'occurences du mot dans le texte et en fonction du nombre de la fréquence du mot dans le corpus de documents.
+
+
+
+```{r, echo=T}
+
+tidy_text_tfidf <- tidy_text %>%
+  dplyr::count(word, dates) %>%
+  bind_tf_idf(word, dates, n) %>%
+  dplyr::arrange(desc(tf_idf))
+
+head(tidy_text_tfidf)
+```
+
+
+## La matrice TF-IDF
+
+```{r, echo=T}
+tidy_text_tfidf$dates <- as.Date(tidy_text_tfidf$dates, format = c("%d %b %Y"))
+tidy_text_tfidf$month <- paste("01/",format(tidy_text_tfidf$dates, "%m"),"/",format(tidy_text_tfidf$dates, "%Y"), sep="")
+tidy_text_tfidf$month_date <- as.Date(tidy_text_tfidf$month, format=c('%d/%m/%Y'))
+```
+
+
+
+## Evolution des mots surprésentés par période
+
+```{r}
+library(ggplot2)
+tidy_text_tfidf %>% 
+  dplyr::filter(month_date >= as.Date("2021-01-01")) %>% 
+  dplyr::group_by(month_date) %>% 
+  top_n(10, tf_idf) %>% 
+  ungroup() %>% 
+  dplyr::mutate(word = reorder(word, tf_idf)) %>% 
+  ggplot(aes(word, tf_idf, fill = month_date)) + 
+  geom_col(show.legend = FALSE) + 
+  facet_wrap(~month_date, scales = "free") + 
+  coord_flip() 
+```
+
+
+## L'occurence des mots de l'écologie au travers du temps
+
+```{r, echo=F}
+
+df_envi <- tidy_text_tfidf %>%
+  dplyr::filter(word=="environnement") %>%
+  dplyr::group_by(month_date) %>%
+  dplyr::summarise(sum_n = sum(n))
+
+ggplot(data=df_envi, aes(x=month_date, y=sum_n)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
+
+```
+
+
+```{r, include=F}
+df_ecologie <- tidy_text_tfidf %>%
+  dplyr::filter(word=="écologie") %>%
+  dplyr::group_by(month_date) %>%
+  dplyr::summarise(sum_n = sum(n))
+
+ggplot(data=df_ecologie, aes(x=month_date, y=sum_n)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
+
+df_transi <- tidy_text_tfidf %>%
+  dplyr::filter(word=="transition") %>%
+  dplyr::group_by(month_date) %>%
+  dplyr::summarise(sum_n = sum(n))
+
+ggplot(data=df_transi, aes(x=month_date, y=sum_n)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
+
+df_biodi <- tidy_text_tfidf %>%
+  dplyr::filter(word=="biodiversité") %>%
+  dplyr::group_by(month_date) %>%
+  dplyr::summarise(sum_n = sum(n))
+
+ggplot(data=df_biodi, aes(x=month_date, y=sum_n)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
+
+```
+
+
+
+## L'association entre les mots
+
+```{r, message=F, include=F, warning=F}
+#install.packages('tm')
+#install.packages('qdapTools')
+library(tm)
+library(qdapTools)
+corpus <- bdd_speech %>%
+   dplyr::mutate(text = stringr::str_replace_all(.$titles, "’", " ")) %>% 
+   .$text %>% 
+   VectorSource()%>%
+   VCorpus()%>%
+   tm_map(content_transformer(tolower))%>%
+   tm_map(stripWhitespace) %>%
+   tm_map(removeNumbers)%>%
+   tm_map(removePunctuation)%>%
+   tm_map(removeWords, stopwords("french"))%>%
+   TermDocumentMatrix()
+
+associations <- findAssocs(corpus, "environnement", corlimit = 0.05) %>% 
+   list_vect2df() %>%
+   data.frame()
+names(associations) <- c("source", "terme", "corr")
+associations <- dplyr::arrange(associations, desc(corr))
+```
+
+Association des mots avec le terme "Environnement"
+```{r}
+ggplot(associations[1:10,], aes(x = terme, y = corr)) + 
+   geom_bar(stat="identity") + 
+   coord_flip()+
+   xlab("Terme") + 
+   ylab("Corrélation") + 
+   theme_minimal()
+```
+
+
+
+## Un graph d'association des mots
+
+
+```{r, warning=F, message=F}
+library(reshape2)
+
+prenoms_fr <-read.csv2('seance_5/Prenoms.csv')
+
+bdd_speech_pair <- bdd_speech %>%
+  unnest_tokens(output = word, input = titles, token = "ngrams", n = 2)
+
+bdd_speech_pair <- cbind(bdd_speech_pair, colsplit(bdd_speech_pair$word, pattern=" ",names=c("word1", "word2"))) %>%
+  dplyr::filter(!word1 %in% stopwords_fr,
+         !word2 %in% stopwords_fr,
+         !word1 %in% prenoms_fr$X01_prenom,
+         !word2 %in% prenoms_fr$X01_prenom,
+         !word1 %in% new_stop_words_fr$word,
+         !word2 %in% new_stop_words_fr$word,
+         !word1 %in% new_stop_words_fr2$word,
+         !word2 %in% new_stop_words_fr2$word) %>%
+  tidyr::drop_na(word1, word2) %>%
+  dplyr::count(word1, word2, sort = TRUE)
+
+# filter for only relatively common combinations
+bigram_graph <- bdd_speech_pair %>%
+  dplyr::filter(n > 150) %>%
+  igraph::graph_from_data_frame()
+
+# Network graph
+set.seed(1776) 
+library(ggraph)
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n, edge_width = n), show.legend = FALSE, alpha = .5) +
+  geom_node_point(color = "#0052A5", size = 3, alpha = .5) +
+  geom_node_text(aes(label = name), vjust = 1.5) +
+  ggtitle("Réseau des mots - (2007-2023)") +
+  theme_void() 
+```
+
+
+
+
+
+# Exercice : Analyse des rapports du GIEC
+
+## Extraire de l'information textuelle depuis un pdf
+
+```{r, echo=T}
+#install.packages("pdftools")
+library("pdftools")
+
+
+pdf.text_report_2001 <- pdftools::pdf_text("seance_5/2001_policy_report.pdf")
+pdf.text_report_2007 <- pdftools::pdf_text("seance_5/2007_policy_report.pdf")
+pdf.text_report_2014 <- pdftools::pdf_text("seance_5/2014_policy_report.pdf")
+
+# selection d'une page en particulier
+# cat(pdf.text_report_2001[[8]]) 
+
+pdf.text_report_2001<-unlist(pdf.text_report_2001)
+pdf.text_report_2001<-tolower(pdf.text_report_2001)
+
+```
+
+
+
+
+
+

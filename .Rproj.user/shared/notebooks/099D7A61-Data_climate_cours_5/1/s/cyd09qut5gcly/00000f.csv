@@ -1,0 +1,4 @@
+"0","tidy_text_stems <- tidy_text %>%"
+"0","  mutate_at(""word"", funs(wordStem((.), language=""fr""))) "
+"0",""
+"0","head(tidy_text_stems)"

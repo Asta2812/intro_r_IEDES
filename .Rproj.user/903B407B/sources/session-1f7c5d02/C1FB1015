@@ -1,0 +1,28 @@
+{
+    "id": "C1FB1015",
+    "path": "~/intro_r_IEDES/Data_climate_cours_5.Rmd",
+    "project_path": "Data_climate_cours_5.Rmd",
+    "type": "r_markdown",
+    "hash": "2051382162",
+    "contents": "",
+    "dirty": false,
+    "created": 1732747115635.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "75,0",
+        "scrollLine": "87",
+        "last_setup_crc32": "1f7c5d02d199492d"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1732809347,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1732809347443,
+    "read_only": false,
+    "read_only_alternatives": []
+}

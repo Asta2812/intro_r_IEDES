@@ -1,0 +1,7 @@
+"0",""
+"0","tidy_text_tfidf <- tidy_text %>%"
+"0","  dplyr::count(word, dates) %>%"
+"0","  bind_tf_idf(word, dates, n) %>%"
+"0","  dplyr::arrange(desc(tf_idf))"
+"0",""
+"0","head(tidy_text_tfidf)"

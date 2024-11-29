@@ -1,0 +1,1228 @@
+"0","tidy_text_stems %>% "
+"0","  dplyr::count(word) %>% "
+"0","  with(wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")))"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," discour could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," programm could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," relanc could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," social could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," prolong could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," grossess could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," débat could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," castex could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," signatur could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," chômag could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," astronaut could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," auditeur could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," xixem could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," articl could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," énerg could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," princip could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," assembl could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," québécois could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," judiciair could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," hospitali could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," mobil could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," bourg could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," system could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," oréal could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," cérémon could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," marseil could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," alexand could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," parisien could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," nouvel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," européen could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," assis could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," louvr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," tribunal could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," gouvern could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," répondr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," reconnaiss could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," annuel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," eston could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," fréjus could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ministériel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," abou could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ère could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," expériment could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," birkenau could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," constitutionnel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," simon could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," municipal could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," respons could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ush could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," patrimoin could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," maison could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," mati could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," cologn could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," transport could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," régional could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," adjoint could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," scientif could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," societ could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," samuel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," banqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," numer could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," concentr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," départ could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," europ could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," campagn could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," jeux could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," présidentiel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," directeur could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," orly could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," marn could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," lrem could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," méti could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," patronal could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," irland could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," déploi could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," républ could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," interministériel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," création could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," tunisien could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," normand could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," dirig could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," irma could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," chirac could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," nancy could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," conclus could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," aven could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," longchamp could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," urgenc could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," écol could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," issu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ouen could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," introduct could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," plan could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," rapport could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," session could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," anniversair could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," lorient could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," strasbourg could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," commun could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," financ could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," chef could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," litim could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," elisabeth could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," gabriel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," sarg could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," environnemental could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," appliqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," parisant could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ger could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," colloqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," edouard could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," toulon could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," axe could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," crim could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," scel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," signatair could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," lutt could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," fabric could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," audit could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," montagn could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," eau could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," technolog could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," verdun could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," parol could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," cosn could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," forum could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," débarqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," élect could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," général could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," entrepris could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," spatial could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," planif could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," epinal could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," sant could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," afriqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ancien could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," vendred could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," diplomat could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," enseign could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," vélo could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," unesco could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," abolit could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," convent could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," médecin could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," agricol could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," volontair could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," pasteur could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," xxiè could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," équilibr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," serr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," renaiss could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," combat could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," élisabeth could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," usin could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," pascal could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," dmitr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," châlon could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," nouveau could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," press could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," campus could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," véran could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," citadel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," prem could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," beauvau could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," havr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," tsinghu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," appel could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," immigr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," reconstruct could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," pact could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," parlementair could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," royaum could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," europlac could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," droit could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," bioéthiqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," nant could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," plein could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," consult could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ultra could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," étudi could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," congres could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," electronic could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," radicalis could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," françois could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," vert could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," pris could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," femm could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," élus could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," aliment could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," cris could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," prix could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," caen could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," metz could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," infecti could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," vosg could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," fraud could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," pos could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," tourism could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," vall could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ilan could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," expert could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," assur could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," attaqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," yvelin could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," legault could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ifrem could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," bilan could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," funebr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," accompagn could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," destin could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," résultat could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," éven could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," brigad could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," mont could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," accéler could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," constitu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," paris could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," engag could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," région could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," jacqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," avocat could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," gudin could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," ahmed could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," integr could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," médi could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," oper could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," liber could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," prévent could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," dassault could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," premi could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," lutterbach could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," inérieur could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," rétabl could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," publiqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," hauss could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," chanceli could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," fondat could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," maprimerénov could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," délinqu could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," grand could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," établ could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," salon could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," scholz could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," justic could not be fit on page. It will not be plotted.
+"
+"2","Avis dans wordcloud(word, n, min.freq = 900, colors = brewer.pal(8, ""Dark2"")) :"
+"2","
+ "
+"2"," monferm could not be fit on page. It will not be plotted.
+"

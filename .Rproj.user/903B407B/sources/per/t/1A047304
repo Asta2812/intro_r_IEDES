@@ -1,0 +1,26 @@
+{
+    "id": "1A047304",
+    "path": "~/intro_r_IEDES/script_session_3_data_climate.R",
+    "project_path": "script_session_3_data_climate.R",
+    "type": "r_source",
+    "hash": "1334058579",
+    "contents": "",
+    "dirty": false,
+    "created": 1732274615616.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "12,17",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1731631723,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1731631723,
+    "read_only": false,
+    "read_only_alternatives": []
+}
